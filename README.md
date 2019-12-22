@@ -1,24 +1,15 @@
-# README
+# Tuning MV
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ミュージックビデオ(MV)を気分に合わせて再生するアプリ
 
-Things you may want to cover:
+YoutubeからMV動画を取得して再生するアプリです。そのときの「気分」にあった動画を取得し、プレイリストを作成,再生できます!
 
-* Ruby version
+疲れた時に「鮮やかなMVプレイリスト」を提供！！
 
-* System dependencies
+[デモ動画]
 
-* Configuration
+## 環境
 
-* Database creation
+-
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+　
