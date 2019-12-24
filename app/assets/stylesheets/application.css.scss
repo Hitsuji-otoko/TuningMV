@@ -1,5 +1,116 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+body {
+  /* 横スクロールバーを非表示 */
+  overflow-x: hidden;
+}
+
+.navbar .navlink {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.navbar .nav-link.active {
+    border-left: #444 3px solid;
+}
+
+.carousel-item {
+  height: 450px;
+}
+
+.carousel-image-1 {
+  background: url('../img/image1.jpg');
+  background-size: cover;
+}
+
+.carousel-image-2 {
+  background: url('../img/image2.jpg');
+  background-size: cover;
+}
+
+.carousel-image-3 {
+  background: url('../img/image3.jpg');
+  background-size: cover;
+}
+
+#home-heading {
+  position: relative;
+  min-height: 200px;
+  background: url("../img/lights.jpg");
+  background-attachment: fix;
+  background-repeat: no-repeat;  /* parallax的効果 */
+  text-align: center;
+  color: #fff;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7)
+}
+
+#video-play {
+  position: relative;
+  min-height: 200px;
+  background: url("../img/media.jpg");
+  background-attachment: fix;
+  background-repeat: no-repeat;  /* parallax的効果 */
+  background-position: 0 -300px;
+  text-align: center;
+  color: #fff;
+}
+
+#video-play a {
+  color: #fff;
+}
+
+#page-header {
+  height: 200px;
+  background: url('../img/image1.jpg');
+  background-position: 0 -360px;
+  background-attachment: fixed;
+  color: #fff;
+  border-bottom: 1px #eee solid;
+  padding-top: 50px;
+}
+
+.about-img {
+  margin-top: 0;
+}
+
+#faq .card {
+  border: #444;
+}
+
+#faq a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#faq .card-body,
+#faq .card-header {
+  background: rgb(110, 108, 108);
+}
+
+#blog .card.p-3.One {
+  background: rgb(182, 228, 177);
+} 
+#blog .card.p-3.Two {
+  background: rgb(169, 231, 231);
+}
+#blog .card.p-3.Three {
+  background: rgb(241, 163, 90);
+} 
+.b-mdm {
+  color: #000;
+}
