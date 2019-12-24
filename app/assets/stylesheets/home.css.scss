@@ -1,0 +1,27 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.top_page {
+  background-image: url('/images/path.jpg');
+  background-size: cover;
+}
+
+.bg-mask {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.circle-image {
+  border-radius: 50%;
+  width:  350px;
+  height: 350px;
+}
+
+@media screen and (max-width: 1000px) {
+  .circle-image{display: none}
+}
+
+p.circle-image-context {
+  margin-top: 50px;
+}
+
