@@ -1,8 +1,8 @@
-.container
-  %h1 TuningMVアプリへようこそ
-
 .top_page
   .bg-mask
+    // Boxanimationのsection
+    -# = render 'boxarea'
+
     / HOME ICON SECTION
     %section#home-icons.py-5
       .container
@@ -19,6 +19,9 @@
             %i.fas.fa-cart-plus.fa-3x.mb-2
             %h3 Making Money
             %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, tenetur!
+    / buttonテスト
+    = link_to "Hover Me", "#", class: 'b-link button'
+    
     / HOME HEADING SECTION
     %section#home-heading.p-5
       .dark-overlay
