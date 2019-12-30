@@ -1,0 +1,30 @@
+///// Header MenuBlock /////
+%header.pt-190.pb-120.bg-dark.header_2
+  / Header MenuBlock
+  %nav.header_menu_2.transparent.pt-30.pb-30.mt-20
+    .container.px-xl-0
+      .row.justify-content-between.align-items-baseline
+        .col-md-4{"data-aos" => "fade-down", "data-aos-delay" => "900", "data-aos-duration" => "600"}
+          .logo.color-white Startup 3
+        .col-md-6.d-flex.justify-content-end.align-items-center{"data-aos" => "fade-down", "data-aos-delay" => "900", "data-aos-duration" => "600"}
+          %a.link.color-white.f-18.mx-15{:href => "#"} Subscribe
+          %a.link.color-white.f-18.mx-15{:href => "#"} Features
+          %a.btn.sm.action-2.mx-15{:href => "#"} Sign Up
+  .container
+    .mb-3.logo.color-white.d-block.d-xl-none.text-center.logo_mobile Startup 3
+    %h1.big.color-white.text-center{"data-aos" => "fade-down", "data-aos-delay" => "0", "data-aos-duration" => "600"}
+      TuningMVアプリ
+
+    .mw-620.mx-auto.mt-35.f-22.color-white.op-7.text-center.text-adaptive
+      %span{"data-aos" => "fade-down", "data-aos-delay" => "300", "data-aos-duration" => "600"}
+        The most important part of the Startup is the samples.
+        The samples form a set of 25 usable pages you can use
+        as is or you can add new blocks from UI Kit.
+    %form.row.align-items-center.justify-content-center.no-gutters.mt-70{:action => "form-handler.php", "data-aos" => "fade-down", "data-aos-delay" => "600", "data-aos-duration" => "600", :method => "POST"}
+      .col-xl-5.col-lg-6.col-md-8.col-sm-9.d-flex.flex-wrap.justify-content-center.justify-content-md-between.holder
+        %input.mw-320.input.lg.border-transparent-white.focus-white.color-white.placeholder-transparent-white.f-20{:name => "email", :placeholder => "Your email", :required => "", :type => "email"}/
+        %button.btn.action-1.lg Send
+    .color-white.op-3.text-center.mt-35
+      %span{"data-aos" => "fade-down", "data-aos-delay" => "900", "data-aos-duration" => "600"}
+        By signing up, you agree to the
+        %a.link.color-white{:href => "#"} Terms of Service
