@@ -4,64 +4,21 @@
     -# = render 'boxarea'
 
     / HOME ICON SECTION
-    %section#home-icons.py-5
-      .container
-        .row
-          .col-md-4.mb-4.text-center
-            %i.fas.fa-cog.fa-3x.mb-2
-            %h3 Turning Gears
-            %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, tenetur!
-          .col-md-4.mb-4.text-center
-            %i.fas.fa-cloud.fa-3x.mb-2
-            %h3 Sending Data
-            %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, tenetur!
-          .col-md-4.mb-4.text-center
-            %i.fas.fa-cart-plus.fa-3x.mb-2
-            %h3 Making Money
-            %p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, tenetur!
-    / buttonテスト
-    = link_to "Hover Me", "#", class: 'b-link button'
+    /= render 'homeicon'
     
-    / HOME HEADING SECTION
-    %section#home-heading.p-5
-      .dark-overlay
-        .row
-          .col
-            .container.p-5
-              %h1 Are You Ready Get Started ?
-              %p.d-none.d-md-block
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt tenetur fugit
-                placeat similique voluptatibus! Asperiores corrupti nihil consequuntur perspiciatis laudantium.
-    / INFO SECTION
-    %section#info.py-3
-      .container
-        .row
-          .col-md-6.align-self-center
-            %h3 Lorem Ipsum
-            %p
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt voluptatem iusto sit minima sint enim.
-              Eos modi recusandae pariatur quis.
-            %a.btn.btn-outline-danger{:href => "#"} Learn More
-          .col-md-6
-            %img.img-fluid{:alt => "laptop.png", :src => "./img/laptop.png"}/
-
+    / darkoverlay SECTION
+    / = render 'darkoverlay'
 
     / ABOUT SECTION
     %section#about.py-3
       .container
         .row
           .col-md-8
-            %h1 What We Do?
-            %p
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium maxime neque rerum voluptatum repellat
-              molestias optio corrupti porro, unde laborum eveniet assumenda quo omnis consequatur debitis in vel ad.
-              Repellendus veniam suscipit quia aspernatur inventore excepturi, ad necessitatibus sint maxime, ratione
-              accusantium! Cum inventore dicta reiciendis qui quam, unde quae!
-            %p
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium maxime neque rerum voluptatum repellat
-              molestias optio corrupti porro, unde laborum eveniet assumenda quo omnis consequatur debitis in vel ad.
-              Repellendus veniam suscipit quia aspernatur inventore excepturi, ad necessitatibus sint maxime, ratione
-              accusantium! Cum inventore dicta reiciendis qui quam, unde quae!
+            %h3 TuningMVアプリとは？
+          
+            %p.circle-image-first-context
+              そのときの「気分」に合ったMV(ミュージックビデオ)をYoutubeから取得し、再生できるアプリです。
+              %br 疲れた時には色鮮やかなMV、落ち着きたい時はしっとりしたMV・・など、あなたの生活にスパイスを！
           .col-md-4
             = image_tag '/images/jacket.jpg', alt: 'アルバムジャケット風',  class: 'circle-image'
         
@@ -69,12 +26,22 @@
           .col-md-4
             = image_tag '/images/park.jpg', alt: '公園', class: 'circle-image'
           .col-md-8
-            %p.circle-image-context
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime ut illum deserunt, sequi adipisci commodi aperiam eligendi porro repellendus ullam?
+            %p.circle-image-title
+              アプリの使い方(MVの再生)
+            .circle-image-context
+              %p
+                %ul
+                  %li「MVページ」に移動する
+                  %li「気分セレクトボックス」をクリックすると、「気分」が表示されるので、そのときの気分を選択 !
+                  %li するとYoutubeのプレイリストから、選択した「気分セレクトボックス」にマッチングしたMVが取得され、ページに表示される
+                  %li MVを楽しもう!! Make fun!!
+            
         .row
           .col-md-8
+            %p.circle-image-title
+              プレイリスト機能
             %p.circle-image-context
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus necessitatibus, repudiandae ratione, pariatur, qui dolores nihil temporibus ducimus corporis rerum in accusantium dolorem suscipit corrupti fuga fugit nesciunt. Animi, eius.
+              MVページで取得した動画一覧を「プレイリスト」として保存して、「プレイリストページ」で閲覧できます。また作成したプレイリストに「いいね」をつけることもできるぞ！
           .col-md-4
             = image_tag '/images/skywindow.jpg', alt: '空', class: 'circle-image'
 
@@ -87,19 +54,19 @@
               .card.bg-danger.text-white.text-center
                 .card-body
                   %i.fas.fa-smile.fa-3x
-                  %h3 Sample Heading
+                  %h4 Sample Heading
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, officia.
             .col-md-4
               .card.bg-warning.text-white.text-center
                 .card-body
                   %i.fas.fa-bullhorn.fa-3x
-                  %h3 Sample Heading
+                  %h4 Sample Heading
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, officia.
             .col-md-4
               .card.bg-info.text-white.text-center
                 .card-body
                   %i.fas.fa-comments.fa-3x
-                  %h3 Sample Heading
+                  %h4 Sample Heading
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, officia.
           / 2行目
           .row.mb-4
@@ -107,17 +74,17 @@
               .card.bg-success.text-white.text-center
                 .card-body
                   %i.fab.fa-apple.fa-3x
-                  %h3 Sample Heading
+                  %h4 Sample Heading
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, officia.
             .col-md-4
               .card.bg-secondary.text-white.text-center
                 .card-body
                   %i.fab.fa-aviato.fa-3x
-                  %h3 Sample Heading
+                  %h4 Sample Heading
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, officia.
             .col-md-4
               .card.bg-dark.text-white.text-center
                 .card-body
                   %i.fas.fa-coffee.fa-3x
-                  %h3 Sample Heading
+                  %h4 Sample Heading
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, officia.

@@ -14,15 +14,58 @@
 
 .circle-image {
   border-radius: 50%;
-  width:  350px;
-  height: 350px;
+  width:  300px;
+  height: 300px;
 }
 
 @media screen and (max-width: 1000px) {
   .circle-image{display: none}
 }
 
-p.circle-image-context {
+p.circle-image-title {
   margin-top: 50px;
+  font-family: DM Sans;
+  font-size: 30px;
+  font-weight: 100;
 }
 
+p.circle-image-first-context {
+  margin-top: 50px;
+  font-family: DM Sans;
+  font-size: 20px;
+}
+
+p.circle-image-context {
+  margin-top: 20px;
+  font-family: DM Sans;
+  font-size: 20px;
+}
+
+// グレーのボックス
+// ul, ol {
+//   background: #f1e9e9;/*灰色に*/
+//   border-radius :8px;
+//   box-shadow :0px 0px 5px rgb(255, 255, 255);
+//   padding: 0.5em 0.5em 0.5em 2em;
+// }
+// ul li, ol li {
+//   line-height: 1.5;
+//   padding: 0.5em 0;
+// }
+
+.circle-image-context ul {
+  padding: 0;
+}
+
+.circle-image-context ul li, ol li {
+  color: #404040;
+  border-left: solid 6px #1fa67a;/*左側の線*/
+  border-bottom: solid 2px #dadada;/*下に灰色線*/
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
