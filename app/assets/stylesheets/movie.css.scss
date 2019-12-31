@@ -1,0 +1,29 @@
+#accordionExample.accordion {
+  .card-header {
+    color: #1E0E62;
+    background-color: rgba(158, 165, 255, 0.3);
+  }
+
+}
+
+button:not(:disabled), 
+[type="button"]:not(:disabled), 
+[type="reset"]:not(:disabled), 
+[type="submit"]:not(:disabled) {
+  color: rgba(13, 173, 34, 0.8);
+  cursor: pointer;
+}
+
+button:hover {
+  color: rgba(10, 59, 167, 1);
+  cursor: pointer;
+}
+
+// .accordion-card {
+//   opacity: 0.5;
+//   margin: 10px;
+//   display:grid;
+//   justify-content: center;
+//   align-items:center;
+//   grid-gap: 0 20px;
+// }
