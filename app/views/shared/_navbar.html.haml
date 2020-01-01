@@ -17,7 +17,7 @@
           ユーザー
         - if user_signed_in?
           .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-            = link_to "プロフィール", "#" , class: "a dropdown-item"
+            = link_to "プロフィール", edit_user_registration_path , class: "a dropdown-item"
             = link_to "ログアウト", logout_path , class: "a dropdown-item"
             .dropdown-divider
             %a.dropdown-item{:href => "#"} Something else here
@@ -29,8 +29,8 @@
             %a.dropdown-item{:href => "#"} Something else here
       %li.nav-item
       
-      -# - if user_signed_in?
-      -#   %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"}= "#{current_user.name}さん、ようこそ"
+      - if user_signed_in?
+        %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"}= "#{current_user.username}さん、ようこそ"
     %form.form-inline.my-2.my-lg-0
       %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
       %button.btn-search.my-2.my-sm-0{:type => "submit"} Search
