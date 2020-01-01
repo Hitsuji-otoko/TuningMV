@@ -70,4 +70,6 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'haml-rails'
 gem 'erb2haml'
-
+gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'devise-i18n'
+gem 'devise-i18n-views'

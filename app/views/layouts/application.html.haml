@@ -9,4 +9,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'shared/navbar'
+    %p.op-0.5.notice= notice
+    %p.op-0.5.alert= alert
     = yield
