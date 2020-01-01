@@ -22,12 +22,13 @@
   box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
 }
 
-button:not(:disabled), 
+.btn-search.button:not(:disabled), 
 [type="button"]:not(:disabled), 
 [type="reset"]:not(:disabled), 
 [type="submit"]:not(:disabled) {
-  background-color: rgba($color: #75fd81be, $alpha: 0.8);
+  background-color: rgba($color: #62f86f, $alpha: 1);
   color: rgb(255, 255, 255);
+  font-weight: bold;
   cursor: pointer;
 }
 

@@ -33,13 +33,13 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Update" %>
+          <%= f.button :submit, "更新する" %>
         </div>
       <% end %>
+      <br>
+      <h6>アカウントを削除する</h6>
 
-      <h4>Cancel my account</h4>
-
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p>Unhappy? <%= link_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当にアカウントを削除しますか?" }, method: :delete %></p>
 
       <%= link_to "Back", :back %>
     </div>
