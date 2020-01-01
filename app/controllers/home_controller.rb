@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, only: :test
+  before_action :authenticate_user!, only: :movie
+  
   def index
   end
 
   def test
-    binding.pry
   end
 
   def movie

@@ -1,11 +1,15 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import "font-awesome";
+
 @import "navbar-custom";
+@import "framework";
+@import "style";
+
 @import "home";
-@import "test";
 @import "movie";
 @import "toastr";
+@import "card";
 
 body {
   /* 横スクロールバーを非表示 */

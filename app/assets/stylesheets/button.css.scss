@@ -36,3 +36,13 @@ button:hover {
   color: rgba(10, 59, 167, 1);
   cursor: pointer;
 }
+
+.card-btn.btn-primary {
+  background-color: #5464f5;
+  color: #ffffff;
+  width: auto;
+  height: auto;
+  font-size: 14px;
+  font-display: inline;
+  padding: 0 20px;
+}
