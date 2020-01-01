@@ -6,19 +6,6 @@
 
 }
 
-button:not(:disabled), 
-[type="button"]:not(:disabled), 
-[type="reset"]:not(:disabled), 
-[type="submit"]:not(:disabled) {
-  color: rgba(13, 173, 34, 0.8);
-  cursor: pointer;
-}
-
-button:hover {
-  color: rgba(10, 59, 167, 1);
-  cursor: pointer;
-}
-
 // .accordion-card {
 //   opacity: 0.5;
 //   margin: 10px;
