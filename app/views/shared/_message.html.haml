@@ -1,2 +1,6 @@
-%p.op-0.5.notice= notice
-%p.op-0.5.alert= alert
+- unless flash.empty?
+  %script{:type => 'text/javascript'}
+    - flash.each do |f|
+      - type = f[0].to_s.gsub('alert','error').gsub('notice','info')
+      :erb
+        toastr['<%= type%>']('<%= f[1]%>');

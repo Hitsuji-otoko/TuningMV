@@ -73,3 +73,5 @@ gem 'erb2haml'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+#flashメッセージを通知で表示
+gem "toastr-rails" 

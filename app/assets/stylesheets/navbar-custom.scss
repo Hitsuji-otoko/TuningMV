@@ -50,3 +50,13 @@ img {
 .btn.sm[class^=border-], .btn.sm[class*=" border-"] {
   line-height: 36px;
 }
+
+message.notice {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #1E0E62;
+  background-color: rgba(129, 222, 250, 0.8);
+  -webkit-font-smoothing: antialiased;
+}
