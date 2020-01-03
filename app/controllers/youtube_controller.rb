@@ -19,6 +19,6 @@ class YoutubeController < ApplicationController
   end
 
   def index
-    @youtube_data = find_videos('Girl Crush')
+    @youtube_data = find_videos('King Gnu')
   end
 end

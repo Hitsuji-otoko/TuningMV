@@ -1,11 +1,18 @@
 .top-page
   .bg-mask
     .container
-      - @youtube_data.items.each do |item|
-        - snippet = item.snippet
-        %p= snippet.title
-        %p
-          = snippet.published_at
-          = snippet.channel_title
-        %div
-          %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{item.id.video_id}", :width => "280"}
+      %section.pt-80.pb-100
+        .row
+          - @youtube_data.items.each do |item|
+            .col-sm-6.col-md-4
+              .card.img-thumbnail
+                .embeded-video-responsive
+                  %div
+                    %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "220", :src => "https://www.youtube.com/embed/#{item.id.video_id}", :width => "340"}
+                .card-body.px-2.py-3
+                  - snippet = item.snippet
+                  %h5.card-title= snippet.title
+                  %p.card-text
+                    = snippet.published_at
+                    = snippet.channel_title
+              %br
