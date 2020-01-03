@@ -1,6 +1,9 @@
 .top-page
   .bg-mask
     .container
+      #section.pt-40
+        = render 'feelingbox'
+
       %section.pt-80.pb-100
         .row
           - @youtube_data.items.each do |item|

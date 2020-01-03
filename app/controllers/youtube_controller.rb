@@ -1,4 +1,6 @@
 class YoutubeController < ApplicationController
+  before_action :authenticate_user!, only: :index
+  
   GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
 
   def find_videos(keyword, after: 1.months.ago, before: Time.now)
