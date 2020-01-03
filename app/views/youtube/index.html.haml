@@ -1,0 +1,11 @@
+.top-page
+  .bg-mask
+    .container
+      - @youtube_data.items.each do |item|
+        - snippet = item.snippet
+        %p= snippet.title
+        %p
+          = snippet.published_at
+          = snippet.channel_title
+        %div
+          %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/#{item.id.video_id}", :width => "280"}

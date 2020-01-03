@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/home/index', to: 'home#index'
   get '/home/test', to: 'home#test'
   get '/home/movie', to: 'home#movie'
+  get '/youtube/index', to: 'youtube#index'
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',

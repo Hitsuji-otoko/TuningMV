@@ -78,5 +78,5 @@ gem 'devise-i18n-views'
 #flashメッセージを通知で表示
 gem "toastr-rails" 
 
-gem 'google-api-client', '~> 0.36.3'
+gem 'google-api-client', '~> 0.36.3', require: 'google/apis/youtube_v3'
 
