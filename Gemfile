@@ -68,10 +68,15 @@ gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
+
 gem 'haml-rails'
 gem 'erb2haml'
+
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 #flashメッセージを通知で表示
 gem "toastr-rails" 
+
+gem 'google-api-client', '~> 0.36.3'
+
