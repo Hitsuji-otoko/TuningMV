@@ -19,3 +19,19 @@
                     = snippet.published_at
                     = snippet.channel_title
               %br
+        -# 再生リストの動画を表示
+        %section.pb-100
+        .row
+          - @matching_feelingbox_videos.items.each do |item|
+            .col-sm-6.col-md-4
+              .card.img-thumbnail
+                .embeded-video-responsive
+                  %div
+                    %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "220", :src => "https://www.youtube.com/embed/#{item.snippet.resource_id.video_id}", :width => "340"}
+                .card-body.px-2.py-3
+                  - snippet = item.snippet
+                  %h5.card-title= snippet.title
+                  %p.card-text
+                    = snippet.published_at
+                    = snippet.channel_title
+              %br

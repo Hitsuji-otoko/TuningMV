@@ -8,6 +8,7 @@ class YoutubeController < ApplicationController
     service.key = GOOGLE_API_KEY
 
     next_page_token = nil
+    
     opt = {
       q: keyword,
       type: 'video',
@@ -20,7 +21,22 @@ class YoutubeController < ApplicationController
     service.list_searches(:snippet, opt)
   end
 
+  def matching_feelingbox_videos(playlist_id)
+    service = Google::Apis::YoutubeV3::YouTubeService.new
+    service.key = GOOGLE_API_KEY
+
+    next_page_token = nil
+    
+    opt = {
+      playlist_id: playlist_id,
+      max_results: 10,
+      page_token: next_page_token,
+    }
+    service.list_playlist_items(:snippet, opt)
+  end
+
   def index
     @youtube_data = find_videos('King Gnu')
+    @matching_feelingbox_videos = matching_feelingbox_videos('PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa') 
   end
 end

@@ -310,6 +310,7 @@ DEPENDENCIES
   erb2haml
   font-awesome-sass
   google-api-client (~> 0.36.3)
+  googleauth
   haml (~> 5.1, >= 5.1.2)
   haml-rails
   jbuilder (~> 2.5)

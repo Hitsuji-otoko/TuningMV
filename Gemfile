@@ -79,4 +79,4 @@ gem 'devise-i18n-views'
 gem "toastr-rails" 
 
 gem 'google-api-client', '~> 0.36.3', require: 'google/apis/youtube_v3'
-
+gem 'googleauth'
