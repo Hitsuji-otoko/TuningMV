@@ -263,9 +263,7 @@ Devise.setup do |config|
 
   require 'devise/orm/active_record'
   config.omniauth :google_oauth2, 
-                Rails.application.credentials.google[:client_id], Rails.application.credentials.google[:client_secret], display: 'popup',
-                name: :google,
-                scope: %w(email)
+                Rails.application.credentials.google[:client_id], Rails.application.credentials.google[:client_secret], display: 'popup'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
