@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :validatable,
+         :omniauthable, :omniauth_providers => [:google_oauth2],
          :authentication_keys => [:username]
 
   # usernameを必須、一意とする
@@ -27,5 +28,20 @@ class User < ApplicationRecord
 
   def email_changed?
     false
-  end 
+  end
+
+  # コールバックを受けた時に
+  # ユーザが既にアプリケーションの中で認知されているかどうかを判断するメソッド
+  def self.find_for_google_oauth2(auth)
+    user = User.where(email: auth.info.email).first
+    unless user
+      user = User.create(name:     auth.info.name,
+                         provider: auth.provider,
+                         uid:      auth.uid,
+                         email:    auth.info.email,
+                         token:    auth.credentials.token,
+                         password: Devise.friendly_token[0, 20])
+    end
+    user
+  end
 end

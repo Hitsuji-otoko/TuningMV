@@ -80,3 +80,5 @@ gem "toastr-rails"
 
 gem 'google-api-client', '~> 0.36.3', require: 'google/apis/youtube_v3'
 gem 'googleauth'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
