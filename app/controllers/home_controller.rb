@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   end
 
   def test
+    
   end
 
   def movie

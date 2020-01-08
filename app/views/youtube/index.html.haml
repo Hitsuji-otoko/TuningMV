@@ -31,5 +31,8 @@
                   %h5.card-title= item[:snippet][:title]
                   %p.card-text
                     = item[:snippet][:published_at]
+                    %br
                     = item[:snippet][:channel_title]
+                    = link_to "#" do
+                      %i.far.fa-file-video.fa-2x
               %br

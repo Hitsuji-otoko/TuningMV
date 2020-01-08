@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/home/test', to: 'home#test'
   get '/home/movie', to: 'home#movie'
   get '/youtube/index', to: 'youtube#index'
+  get '/youtube/create', to: 'youtube#create'
 
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
