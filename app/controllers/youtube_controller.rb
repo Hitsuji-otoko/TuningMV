@@ -18,7 +18,24 @@ class YoutubeController < ApplicationController
       published_after: after.iso8601,
       published_before: before.iso8601
     }
-    service.list_searches(:snippet, opt)
+
+    begin
+      results = service.list_searches(:snippet, opt)
+      results_items = results.to_h
+      @search_results = results_items[:items]   # この段階で結果はArrayになる
+      
+      # 検索結果がない時は、処理を抜ける
+      if @search_results.blank?
+        return
+      end
+    
+    # beginの処理が実行できなかった場合の例外処理
+    rescue Google::Apis::YoutubeV3::YouTubeService => err
+      puts "Youtube APIからの動画取得に問題が発生しました"
+      puts err.results.body
+    end
+
+    return @search_results
   end
 
   def matching_feelingbox_videos(playlist_id)
@@ -32,11 +49,29 @@ class YoutubeController < ApplicationController
       max_results: 10,
       page_token: next_page_token,
     }
-    service.list_playlist_items(:snippet, opt)
+    
+    begin
+      results = service.list_playlist_items(:snippet, opt)
+      results_items = results.to_h
+      @search_results = results_items[:items]   # この段階で結果はArrayになる
+      
+      # 検索結果がない時は、処理を抜ける
+      if @search_results.blank?
+        return
+      end
+    
+    # beginの処理が実行できなかった場合の例外処理
+    rescue Google::Apis::YoutubeV3::YouTubeService => err
+      puts "Youtube APIからの動画取得に問題が発生しました"
+      puts err.results.body
+    end
+
+    return @search_results
   end
 
   def index
     @youtube_data = find_videos('King Gnu')
-    @matching_feelingbox_videos = matching_feelingbox_videos('PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa') 
+    @matching_feelingbox_videos = matching_feelingbox_videos('PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa')
+    binding.pry
   end
 end

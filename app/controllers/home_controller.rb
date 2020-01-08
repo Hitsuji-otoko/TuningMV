@@ -5,7 +5,6 @@ class HomeController < ApplicationController
   end
 
   def test
-    binding.pry
   end
 
   def movie
