@@ -5,21 +5,7 @@
         = render 'feelingbox'
 
       %section.pt-80.pb-100
-        .row
-          - @find_videos.each do |item|
-            .col-sm-6.col-md-4
-              .card.img-thumbnail
-                .embeded-video-responsive
-                  %div
-                    %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "220", :src => "https://www.youtube.com/embed/#{item[:id][:video_id]}", :width => "340"}
-                .card-body.px-2.py-3
-                  %h5.card-title= item[:snippet][:title]
-                  %p.card-text
-                    = item[:snippet][:published_at]
-                    = item[:snippet][:channel_title]
-              %br     
         -# 再生リストの動画を表示
-        %section.pb-100
         .row
           - @playlist_videos.each do |item|
             .col-sm-6.col-md-4
@@ -33,6 +19,6 @@
                     = item[:snippet][:published_at]
                     %br
                     = item[:snippet][:channel_title]
-                    = link_to "#" do
+                    = link_to youtube_index_path(video_id: item[:id],  title: item[:snippet][:title], description: item[:snippet][:description]), :method => :post do 
                       %i.far.fa-file-video.fa-2x
               %br

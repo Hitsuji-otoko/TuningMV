@@ -1,0 +1,10 @@
+.top-page
+  .bg-mask
+    .container
+      #section.pt-40
+        = render 'shared/message'
+
+        %p 
+          = @playlist_video.title
+          %br
+          = @playlist_video.description

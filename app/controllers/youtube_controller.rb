@@ -4,12 +4,31 @@ class YoutubeController < ApplicationController
   GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
 
   def index
-    @find_videos = find_videos('King Gnu')
+    # @find_videos = find_videos('King Gnu')
     @playlist_videos = playlist_videos('PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa')
   end
 
+  def new
+    @playlist_video = Youtube.new
+  end
+
   def create
-    # APIで取得した動画のうち、特定のものだけをYoutubesテーブルに保存したい
+    # APIで取得した動画のうち、view側で指定したものだけを保存する
+    @playlist_video = Youtube.create(
+      video_id: params[:video_id],
+      title: params[:title],
+      description: params[:description]
+    )
+    if @playlist_video.save
+      redirect_to @playlist_video, notice: "「#{@playlist_video.title}」をリストに追加しました"
+    end
+  end
+
+  def show
+    @playlist_video = Youtube.find(params[:id])
+  end
+
+  def destroy
   end
 
   private
