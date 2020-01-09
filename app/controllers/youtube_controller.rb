@@ -5,7 +5,7 @@ class YoutubeController < ApplicationController
 
   def index
     # @find_videos = find_videos('King Gnu')
-    @playlist_videos = playlist_videos('PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa')
+    @playlist_videos = playlist_videos("PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa")
   end
 
   def new
