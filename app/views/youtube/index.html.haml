@@ -6,7 +6,7 @@
 
       %section.pt-80.pb-100
         .row
-          - @youtube_data.each do |item|
+          - @find_videos.each do |item|
             .col-sm-6.col-md-4
               .card.img-thumbnail
                 .embeded-video-responsive
@@ -21,7 +21,7 @@
         -# 再生リストの動画を表示
         %section.pb-100
         .row
-          - @matching_feelingbox_videos.each do |item|
+          - @playlist_videos.each do |item|
             .col-sm-6.col-md-4
               .card.img-thumbnail
                 .embeded-video-responsive
