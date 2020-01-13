@@ -57,8 +57,8 @@
               .card.bg-secondary.text-white.text-center
                 .card-body
                   %i.fab.fa-aviato.fa-3x
-                  %h4 病みつきメロディ
-                  コードや音階が病みつきになる。リピート必至のMV。
+                  %h4 やみつきメロディ
+                  コードや音階がやみつきになる。リピート必至のMV。
                   %br
                   = link_to youtube_match_playlist_path(playlist_id: 'PLQ6aFfQOcQBO6z6usNEPeGudbOtXQ7IqF') do
                     %i.fab.fa-youtube.fa-2x
@@ -71,3 +71,18 @@
                   %br
                   = link_to youtube_match_playlist_path(playlist_id: 'PLQ6aFfQOcQBMVQBqb0svBMXPH5EYIcEtp') do
                     %i.fab.fa-youtube.fa-2x
+
+/ MVリストのタイトル
+- case params[:playlist_id]
+  - when "PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa" then
+    %h3 元気になれるMV
+  - when "PLQ6aFfQOcQBPjwabrsAf5cH7UL51X0ODA" then
+    %h3 ゆったり落ち着けるMV
+  - when "PLQ6aFfQOcQBMaKVnqNEiF-8FxEYCAqJpK" then
+    %h3 色鮮やかなMV
+  - when "PLQ6aFfQOcQBNVNfg1k9dtNDF-x0DLvPfH" then
+    %h3 幻想的な世界観のMV
+  - when "PLQ6aFfQOcQBO6z6usNEPeGudbOtXQ7IqF" then
+    %h3 やみつきメロディMV
+  - when "PLQ6aFfQOcQBMVQBqb0svBMXPH5EYIcEtp" then
+    %h3 優しい気持ちになるMV

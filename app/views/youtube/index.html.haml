@@ -18,7 +18,7 @@
                   %p.card-text
                     = item[:snippet][:published_at]
                     %br
-                    = item[:snippet][:channel_title]
+                    = "再生リストに保存"
                     = link_to youtube_index_path(video_id: item[:id],  title: item[:snippet][:title], description: item[:snippet][:description]), :method => :post do 
                       %i.far.fa-file-video.fa-2x
               %br

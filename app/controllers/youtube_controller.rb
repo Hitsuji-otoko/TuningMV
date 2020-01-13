@@ -31,8 +31,6 @@ class YoutubeController < ApplicationController
   def destroy
   end
 
-  # TODO: 一つのメソッドで、「複数のプレイリストIDに応じて、処理を分ける」
-
   def match_playlist
     # paramsが空だとAPIメソッドがエラーとなってしまうので回避
     params[:playlist_id].blank? ? @playlist_videos = playlist_videos('PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa') : @playlist_videos = playlist_videos(params[:playlist_id])
@@ -76,14 +74,13 @@ class YoutubeController < ApplicationController
     next_page_token = nil
     opt = {
       playlist_id: playlist_id,
-      max_results: 10,
+      max_results: 50,
       page_token: next_page_token,
     }
     begin
       results = service.list_playlist_items(:snippet, opt)
       results_items = results.to_h
       search_results = results_items[:items]   # この段階で結果はArrayになる
-      
       # 検索結果がない時は、処理を抜ける
       if search_results.blank?
         return
