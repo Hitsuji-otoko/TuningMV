@@ -31,6 +31,15 @@ class YoutubeController < ApplicationController
   def destroy
   end
 
+  # TODO: 一つのメソッドで、「複数のプレイリストIDに応じて、処理を分ける」
+  def fine_playlist
+    @playlist_videos = playlist_videos('PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa')
+  end
+
+  def relax_playlist
+    @playlist_videos = playlist_videos('PLQ6aFfQOcQBPjwabrsAf5cH7UL51X0ODA')
+  end
+
   private
 
   def find_videos(keyword, after: 1.months.ago, before: Time.now)
