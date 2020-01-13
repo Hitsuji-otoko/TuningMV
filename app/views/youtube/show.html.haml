@@ -1,10 +1,29 @@
 .top-page
   .bg-mask
     .container
-      #section.pt-40
+      #section.pt-40.pb-100
         = render 'shared/message'
 
         %p 
           = @playlist_video.title
           %br
-          = @playlist_video.description
+          = @playlist_video.playlist_id
+          %br
+          = @playlist_video.video_id
+
+        .col-sm-6.col-md-6
+          .card.img-thumbnail
+            .embeded-video-responsive
+              %div
+                %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "220", :src => "https://www.youtube.com/embed/#{@playlist_video[:video_id]}", :width => "340"}
+            .card-body.px-2.py-3
+              %h5.card-title= @playlist_video[:title]
+              %p.card-text
+                = @playlist_video[:published_at]
+                -# %br
+                -# = "再生リストに保存"
+                -# = link_to youtube_index_path(specific_id: item[:id], title: item[:snippet][:title], video_id: item[:snippet][:resource_id][:video_id], description: item[:snippet][:description]), :method => :post do 
+                -#   %i.far.fa-file-video.fa-2x
+          %br
+          = link_to youtube_match_playlist_path(playlist_id: @playlist_video.playlist_id) do
+            %button.btn.action-1.lg MVページへ戻る

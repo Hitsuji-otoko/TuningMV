@@ -15,7 +15,9 @@ class YoutubeController < ApplicationController
   def create
     # APIで取得した動画のうち、view側で指定したものだけを保存する
     @playlist_video = Youtube.create(
+      specific_id: params[:specific_id],
       video_id: params[:video_id],
+      playlist_id: params[:playlist_id],
       title: params[:title],
       description: params[:description]
     )
