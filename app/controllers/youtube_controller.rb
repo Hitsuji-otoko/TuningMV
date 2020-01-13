@@ -9,12 +9,12 @@ class YoutubeController < ApplicationController
   end
 
   def new
-    @playlist_video = Youtube.new
+    @playlist_video = current_user.youtubes.build
   end
 
   def create
     # APIで取得した動画のうち、view側で指定したものだけを保存する
-    @playlist_video = Youtube.create(
+    @playlist_video = current_user.youtubes.create(
       specific_id: params[:specific_id],
       video_id: params[:video_id],
       playlist_id: params[:playlist_id],
@@ -28,11 +28,11 @@ class YoutubeController < ApplicationController
   end
 
   def show
-    @playlist_video = Youtube.find(params[:id])
+    @playlist_video = current_user.youtubes.find(params[:id])
   end
 
   def destroy
-    playlist_video = Youtube.find(params[:id])
+    playlist_video = current_user.youtubes.find(params[:id])
     if playlist_video.destroy
       redirect_to youtube_user_playlist_path, alert: "「#{playlist_video.title}」をリストから削除しました"
     end
@@ -44,7 +44,7 @@ class YoutubeController < ApplicationController
   end
 
   def user_playlist
-    @playlist_videos = Youtube.page(params[:page])
+    @playlist_videos = current_user.youtubes.page(params[:page])
   end
 
   private

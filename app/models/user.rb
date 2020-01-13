@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:google_oauth2],
          :authentication_keys => [:username]
+  # Youtubeモデルとの関連づけ
+  has_many :youtubes, dependent: :destroy
 
   # usernameを必須、一意とする
   validates_uniqueness_of :username
