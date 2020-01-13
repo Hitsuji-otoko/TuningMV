@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_current_user 
 
   protected
 
@@ -19,5 +20,9 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     # ログアウト後のパスを指定
     root_path
+  end
+
+  def set_current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 end
