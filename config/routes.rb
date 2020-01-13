@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/home/movie', to: 'home#movie'
   
   get '/youtube/match_playlist', to: 'youtube#match_playlist'
+  get '/youtube/user_playlist', to: 'youtube#user_playlist'
    resources :youtube
     
   

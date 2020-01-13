@@ -1,0 +1,26 @@
+.top-page
+  .bg-mask
+    %section.pt-40.pb-100
+      .container
+        = render 'shared/message'
+        
+        %h3= "#{current_user.username}さんのプレイリスト"
+        %br
+        .row
+          - @playlist_videos.each do |item|
+            .col-sm-6.col-md-4
+              .card.img-thumbnail
+                .embeded-video-responsive
+                  %div
+                    %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "220", :src => "https://www.youtube.com/embed/#{item[:video_id]}", :width => "340"}
+                .card-body.px-2.py-3
+                  %h5.card-title= item[:title]
+                  %p.card-text
+                    = item[:published_at]
+                  %br
+                  = link_to youtube_path(item) do 
+                    %button.btn-outline-primary 詳細
+                  = link_to youtube_path(item), :method => :delete do 
+                    %button.btn-outline-danger 削除
+              %br
+          = paginate @playlist_videos

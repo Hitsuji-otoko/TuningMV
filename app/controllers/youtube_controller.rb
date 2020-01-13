@@ -1,5 +1,5 @@
 class YoutubeController < ApplicationController
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!, only: [:index, :show, :match_playlist, :user_playlist]
   
   GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
 
@@ -31,11 +31,19 @@ class YoutubeController < ApplicationController
   end
 
   def destroy
+    playlist_video = Youtube.find(params[:id])
+    if playlist_video.destroy
+      redirect_to youtube_user_playlist_path, alert: "「#{playlist_video.title}」をリストから削除しました"
+    end
   end
 
   def match_playlist
     # paramsが空だとAPIメソッドがエラーとなってしまうので回避
     params[:playlist_id].blank? ? @playlist_videos = playlist_videos('PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa') : @playlist_videos = playlist_videos(params[:playlist_id])
+  end
+
+  def user_playlist
+    @playlist_videos = Youtube.page(params[:page])
   end
 
   private

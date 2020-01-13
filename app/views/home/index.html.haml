@@ -47,10 +47,10 @@
             %p.circle-image-title
               プレイリスト機能
             %p.circle-image-context
-              MVページで取得した動画一覧を「プレイリスト」として保存して、「プレイリストページ」で閲覧できます。また作成したプレイリストに「いいね」をつけることもできるぞ！
+              MVページで取得した動画一覧を「自分のプレイリスト」として保存して、「 Playlistページ」で閲覧できます。
             %br  
-              = link_to "#" do 
-                %button.btn.action-1.lg プレイリストページ
+              = link_to youtube_user_playlist_path do 
+                %button.btn.action-1.lg Playlistページ
           .col-md-4
             = image_tag '/images/skywindow.jpg', alt: '空', class: 'circle-image'
 

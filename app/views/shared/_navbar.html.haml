@@ -10,8 +10,9 @@
           %span.sr-only (current)
       %li.nav-item
         %a.nav-link{:href => "/youtube"} MV
-      %li.nav-item  
-        %a.nav-link{:href => "#"} Playlist
+      - if user_signed_in?
+        %li.nav-item  
+          = link_to "Playlist", youtube_user_playlist_path, class: "a nav-link"
       %li.nav-item.dropdown
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
           ユーザー
