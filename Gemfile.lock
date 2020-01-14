@@ -92,6 +92,7 @@ GEM
     devise-i18n (1.9.0)
       devise (>= 4.7.1)
     devise-i18n-views (0.3.7)
+    diff-lcs (1.3)
     erb2haml (0.1.5)
       html2haml
     erubi (1.9.0)
@@ -251,6 +252,23 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     retriable (3.1.2)
+    rspec-core (3.9.1)
+      rspec-support (~> 3.9.1)
+    rspec-expectations (3.9.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (3.9.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.2)
     ruby_dep (1.5.0)
     ruby_parser (3.14.1)
       sexp_processor (~> 4.9)
@@ -287,6 +305,8 @@ GEM
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     spring (2.1.0)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -354,10 +374,12 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.1)
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form (~> 5.0, >= 5.0.1)
   spring
+  spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
   toastr-rails
   turbolinks (~> 5)
