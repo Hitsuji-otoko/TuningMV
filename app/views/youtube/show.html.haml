@@ -13,10 +13,6 @@
                 %h5.card-title= @playlist_video[:title]
                 %p.card-text
                   = @playlist_video[:published_at]
-                  -# %br
-                  -# = "再生リストに保存"
-                  -# = link_to youtube_index_path(specific_id: item[:id], title: item[:snippet][:title], video_id: item[:snippet][:resource_id][:video_id], description: item[:snippet][:description]), :method => :post do 
-                  -#   %i.far.fa-file-video.fa-2x
           .col-sm-6.md-6
             .card.img-thumbnail
               .card-body.px-2.py-3
@@ -33,4 +29,4 @@
         = link_to youtube_match_playlist_path(playlist_id: @playlist_video.playlist_id) do
           %button.btn.action-1.lg MVページへ行く
         = link_to youtube_user_playlist_path do
-          %button.btn.action-1.lg Playlistページへ行く
+          %button.btn.action-3.lg Playlistページへ行く
