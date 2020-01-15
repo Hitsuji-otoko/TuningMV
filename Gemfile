@@ -90,3 +90,6 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+
+# エラーメッセージを日本語化
+gem 'rails-i18n', '~> 5.1'
