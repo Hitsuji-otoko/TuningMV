@@ -52,6 +52,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'rails-erd'
 end
 
 group :test do
@@ -71,15 +72,18 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 
+# hamlに変換
 gem 'haml-rails'
 gem 'erb2haml'
 
+# devise
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 #flashメッセージを通知で表示
 gem "toastr-rails" 
 
+# youtube data apiとGoogle認証
 gem 'google-api-client', '~> 0.36.3', require: 'google/apis/youtube_v3'
 gem 'googleauth'
 gem 'omniauth'

@@ -5,4 +5,5 @@ WORKDIR /TuningMV
 COPY Gemfile /TuningMV/Gemfile
 COPY Gemfile.lock /TuningMV/Gemfile.lock
 RUN bundle install
+RUN apt-get install -y graphviz
 COPY . /TuningMV
