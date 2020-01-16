@@ -11,12 +11,11 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
-  # パスしない
+  
   it "ユーザー名がなければ無効" do
     user = User.new(username: nil)
-
     user.valid?
-    expect(user.errors[:username]).to include("入力されていません")
+    expect(user.errors[:username]).to include("が入力されていません。")
   end
 end
 
