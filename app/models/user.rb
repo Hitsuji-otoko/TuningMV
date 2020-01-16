@@ -8,9 +8,9 @@ class User < ApplicationRecord
   # Youtubeモデルとの関連づけ
   has_many :youtubes, dependent: :destroy
 
-  # usernameを必須、一意とする
-  validates_uniqueness_of :username
-  validates_presence_of :username
+  
+  validates :username, presence: true, uniqueness: true
+  validates :email, uniqueness: true
 
   # user_idを仕様してログインするようオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -21,7 +21,7 @@ class User < ApplicationRecord
     else
       where(conditions).first
     end 
-  end 
+  end  
 
   # 登録時にemailを不要とする
   def email_required?
