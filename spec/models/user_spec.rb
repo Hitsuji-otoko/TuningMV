@@ -14,7 +14,6 @@ RSpec.describe User, type: :model do
       @user.username = nil
       expect(@user.valid?).to eq(false)
     end
-
   end
 end
 
