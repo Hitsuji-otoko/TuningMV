@@ -1,5 +1,5 @@
 class YoutubeController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :show, :match_playlist, :user_playlist]
+  before_action :authenticate_user!
   
   GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
 
