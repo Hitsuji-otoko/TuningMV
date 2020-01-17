@@ -46,7 +46,6 @@ class YoutubeController < ApplicationController
     @playlist_videos = current_user.youtubes.page(params[:page])
   end
 
-  # --------------------------------- #
 
   private
   
