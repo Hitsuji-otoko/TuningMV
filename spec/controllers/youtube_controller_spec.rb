@@ -64,23 +64,24 @@ RSpec.describe YoutubeController, type: :controller do
     end
   end
 
-  # TODO
-  # エラー：URIにAPIから取得したパラメータを入れる必要があるため
-  # describe "#create" do
-  #   context '認可済みのユーザーの場合' do
-  #     before do
-  #       @user = FactoryBot.create(:user)
-  #     end
+  describe "#create" do
+    context '認可済みのユーザーの場合' do
+      before do
+        @user = FactoryBot.create(:user)
+        @youtube = FactoryBot.create(:youtube)
+      end
 
-  #     it 'プレイリスト(youtubeテーブル)を追加できること' do
-  #       youtube_params = FactoryBot.attributes_for(:youtube)
-  #       sign_in @user
-  #       expect { post :youtube, 
-  #         params: { youtube: youtube_params } 
-  #       }.to change(@user.youtubes, :count).by(1)
-  #     end
-  #   end
-  # end
+      # エラー:ActionController::UrlGenerationError 正しいパスを指定できていない
+      it 'プレイリストに動画を追加できること' do
+        youtube_params = FactoryBot.attributes_for(:youtube)
+        sign_in @user
+        expect { post :youtube, 
+          params: { youtube: youtube_params } 
+        }.to change(@user.youtubes, :count).by(1)
+      end
+    end
+  end
+
 
   describe "#destroy" do
     context '認可済みのユーザーの場合' do

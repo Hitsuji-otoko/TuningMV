@@ -20,6 +20,6 @@
                     = item[:snippet][:published_at]
                     %br
                     = "再生リストに保存"
-                    = link_to youtube_index_path(specific_id: item[:id], title: item[:snippet][:title], video_id: item[:snippet][:resource_id][:video_id], playlist_id: item[:snippet][:playlist_id], description: item[:snippet][:description]), :method => :post do 
+                    = link_to youtube_index_path(specific_id: item[:id], title: item[:snippet][:title], video_id: item[:snippet][:resource_id][:video_id], playlist_id: item[:snippet][:playlist_id], description: item[:snippet][:description][0..1023]), :method => :post do 
                       %i.far.fa-file-video.fa-2x
               %br

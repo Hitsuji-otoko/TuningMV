@@ -4,7 +4,7 @@ class YoutubeController < ApplicationController
   GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
 
   def index
-    @playlist_videos = playlist_videos("PLQ6aFfQOcQBO2zPgf9ru4_DDuNFmycpQa")
+    
   end
 
   def new
@@ -66,6 +66,7 @@ class YoutubeController < ApplicationController
       if search_results.blank?
         return
       end
+
     # beginの処理が実行できなかった場合の例外処理
     rescue Google::Apis::YoutubeV3::YouTubeService => err
       puts "YoutubeAPIからの動画取得に問題が発生しました"
