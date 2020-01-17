@@ -80,6 +80,12 @@ RSpec.describe YoutubeController, type: :controller do
         }.to change(@user.youtubes, :count).by(1)
       end
     end
+
+    context '未認可のユーザーの場合' do
+      it '動画を追加できずログイン画面にリダイレクトすること' do
+        
+      end
+    end
   end
 
 
