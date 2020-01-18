@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Youtubes", type: :feature do
+RSpec.feature "Youtubes#Feature_test", type: :feature do
   background do
     @user = FactoryBot.create(:user)
   end
