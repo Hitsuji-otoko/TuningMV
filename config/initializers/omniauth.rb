@@ -11,4 +11,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       prompt: "select_account",
       access_type: "offline"
     }
+  {:provider_ignores_state => true}
 end

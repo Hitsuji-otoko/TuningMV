@@ -70,20 +70,27 @@ RSpec.describe YoutubeController, type: :controller do
         @user = FactoryBot.create(:user)
         @youtube = FactoryBot.create(:youtube)
       end
-
-      # エラー:ActionController::UrlGenerationError 正しいパスを指定できていない
+      
       it 'プレイリストに動画を追加できること' do
         youtube_params = FactoryBot.attributes_for(:youtube)
         sign_in @user
-        expect { post :youtube, 
+        expect { post :create, 
           params: { youtube: youtube_params } 
         }.to change(@user.youtubes, :count).by(1)
       end
     end
 
     context '未認可のユーザーの場合' do
-      it '動画を追加できずログイン画面にリダイレクトすること' do
-        
+      it '302レスポンスを返すこと' do
+        youtube_params = FactoryBot.attributes_for(:youtube)
+        post :create, params: { youtube: youtube_params } 
+        expect(response).to have_http_status "302"
+      end
+
+      it 'ログイン画面にリダイレクトすること' do
+        youtube_params = FactoryBot.attributes_for(:youtube)
+        post :create, params: { youtube: youtube_params }
+        expect(response).to redirect_to "/users/sign_in"
       end
     end
   end
