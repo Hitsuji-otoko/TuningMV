@@ -4,28 +4,32 @@
       <br>
       <h4>パスワードを忘れちゃった?</h4>
       <br>
+      <section class="pb-400">
+        <section class="pb-80">
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= f.error_notification %>
 
-      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-        <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :username,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "username" } %>
+            <div class="form-inputs">
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" } %>
+            </div>
 
-        <div class="form-inputs">
-          <%= f.input :username,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "username" } %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, "Send me reset password instructions" %>
-        </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
+            <div class="form-actions">
+              <%= f.button :submit, "Send me reset password instructions" %>
+            </div>
+          <% end %>
+        </section>
+        <strong>
+          <%= render "devise/shared/links" %>
+        </strong>
+      </section>
     </div>
   </div>
 </div>
