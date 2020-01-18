@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   get '/home/index', to: 'home#index'
   get '/home/test', to: 'home#test'
-  get '/home/movie', to: 'home#movie'
+  post '/home/guest_sign_in', to: 'home#new_guest'
   
   get '/youtube/match_playlist', to: 'youtube#match_playlist'
   get '/youtube/user_playlist', to: 'youtube#user_playlist'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',
-    omniauth_callbacks: "users/omniauth_callbacks"
+    omniauth_callbacks: "users/omniauth_callbacks",
   } 
   
   devise_scope :user do
