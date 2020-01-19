@@ -24,10 +24,10 @@
                 <%= f.button :submit, "Log in", class: "btn action-1 lg my-2 my-sm-10" %>              
               </div>
               <br>
-              
-                <p>ゲストユーザー(仮のユーザー)としてワンクリックでログイン</p>
-              
-              <%= link_to "ゲストユーザーでログイン", home_guest_sign_in_path, class: "btn btn-info", method: :post %>
+                <strong>
+                  <p>ゲストユーザー(仮のユーザー)としてワンクリックでログイン</p>
+                </strong>
+              <%= link_to "ゲストユーザーでLog in", home_guest_sign_in_path, class: "btn btn-info", method: :post %>
             <% end %>
           </section>
         <strong>
