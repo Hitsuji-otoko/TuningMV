@@ -12,6 +12,6 @@ class HomeController < ApplicationController
       
     end
     sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to youtube_index_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 end
