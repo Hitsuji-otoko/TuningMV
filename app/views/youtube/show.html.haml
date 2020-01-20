@@ -24,7 +24,11 @@
                   %br
                   %strong= "動画概要(Youtubeの概要欄を転載)"
                   %br
-                  = @playlist_video.description
+                  .grad-wrap
+                    %input#trigger1.grad-trigger{:type => "checkbox"}
+                    .grad-item
+                      = @playlist_video.description
+                    %label.grad-btn{:for => "trigger1"}
         %br
         = link_to youtube_match_playlist_path(playlist_id: @playlist_video.playlist_id) do
           %button.btn.action-1.lg MVページへ行く

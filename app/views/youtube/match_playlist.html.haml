@@ -19,7 +19,8 @@
                   %p.card-text
                     = item[:snippet][:published_at]
                     %br
-                    = "Playlist(プレイリスト)に保存"
+                    %strong
+                      = "Playlistに保存"
                     = link_to youtube_index_path(specific_id: item[:id], title: item[:snippet][:title], video_id: item[:snippet][:resource_id][:video_id], playlist_id: item[:snippet][:playlist_id], description: item[:snippet][:description][0..1024]), :method => :post do 
                       %i.far.fa-file-video.fa-2x
               %br
