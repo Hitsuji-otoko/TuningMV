@@ -61,13 +61,13 @@ class YoutubeController < ApplicationController
     begin
       results = service.list_playlist_items(:snippet, opt)
       results_items = results.to_h
-      search_results = results_items[:items]   # この段階で結果はArrayになる
-      # 検索結果がない時は、処理を抜ける
+      search_results = results_items[:items]   
+      
       if search_results.blank?
         return
       end
 
-    # beginの処理が実行できなかった場合の例外処理
+    
     rescue Google::Apis::YoutubeV3::YouTubeService => err
       puts "YoutubeAPIからの動画取得に問題が発生しました"
       puts err.results.body
