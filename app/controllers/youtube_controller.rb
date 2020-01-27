@@ -21,6 +21,7 @@ class YoutubeController < ApplicationController
       description: params[:description],
       user_id: current_user.id
     )
+
     if @playlist_video.save
       redirect_to @playlist_video, notice: "「#{@playlist_video.title}」をPlaylistに追加しました"
     end
