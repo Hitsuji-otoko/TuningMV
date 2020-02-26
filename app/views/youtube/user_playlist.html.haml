@@ -4,7 +4,7 @@
       .container
         = render 'shared/message'
         
-        %h3= "#{current_user.username}さんのプレイリスト"
+        %h3= "#{current_user.username}さんのPlaylist"
         %br
         .row
           - @playlist_videos.each do |item|

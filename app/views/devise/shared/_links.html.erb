@@ -19,7 +19,10 @@
 <% end %>
 
 <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
+  <!-- <%- resource_class.omniauth_providers.each do |provider| %>
     <%= link_to "Googleアカウントでログイン", omniauth_authorize_path(resource_name, provider) %><br />
+  <% end %> -->
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Googleアカウントでログイン<開発中>", "#" %><br />
   <% end %>
 <% end %>

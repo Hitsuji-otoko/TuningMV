@@ -79,6 +79,9 @@ test:
 # 本番環境はAWSで構築するから、後回し
 production:
   <<: *default
-  database: tuningmv_production
-  username: tuningmv
-  password: <%= ENV['TUNINGMV_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
+  
+

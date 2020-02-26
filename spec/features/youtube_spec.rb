@@ -6,7 +6,7 @@ RSpec.feature "Youtubes#Feature_test", type: :feature do
   end
 
   context 'まだユーザー登録をしていない場合' do
-    scenario 'ユーザー登録をしてルート画面にリダイレクトする' do 
+    scenario 'ユーザー登録をしてMVページにリダイレクトする' do 
       visit root_path
       click_button "MVページ"
       visit new_user_session_path
@@ -18,14 +18,14 @@ RSpec.feature "Youtubes#Feature_test", type: :feature do
         fill_in "パスワード", with: @user.password
       end
       fill_in "確認用パスワード", with: @user.password_confirmation
-      visit root_path
+      visit youtube_index_path
 
       expect(page).to have_http_status "200"
     end
   end
 
   context 'ユーザー登録済みでログインしたい場合' do
-    scenario 'ログインしてルート画面にリダイレクトする' do
+    scenario 'ログインしてMVページにリダイレクトする' do
       visit root_path
       click_button "MVページ"
       visit new_user_session_path
@@ -33,7 +33,7 @@ RSpec.feature "Youtubes#Feature_test", type: :feature do
       fill_in "パスワード", with: @user.password
       # チェックボックスはチェックしてもしなくても良い
       click_button "Log in"
-      visit root_path
+      visit youtube_index_path
 
       expect(page).to have_http_status "200"
     end

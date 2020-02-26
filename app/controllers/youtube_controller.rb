@@ -22,7 +22,7 @@ class YoutubeController < ApplicationController
       user_id: current_user.id
     )
     if @playlist_video.save
-      redirect_to @playlist_video, notice: "「#{@playlist_video.title}」をリストに追加しました"
+      redirect_to @playlist_video, notice: "「#{@playlist_video.title}」をPlaylistに追加しました"
     end
   end
 
