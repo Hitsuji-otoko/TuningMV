@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 @import "button";
-@import "box_animation";
 
 .top-page {
   background-image: url('/images/path.jpg');
@@ -24,20 +23,20 @@
 
 p.circle-image-title {
   margin-top: 50px;
-  font-family: DM Sans;
+  font-family: serif;
   font-size: 30px;
   font-weight: 100;
 }
 
 p.circle-image-first-context {
   margin-top: 50px;
-  font-family: DM Sans;
+  font-family: serif;
   font-size: 20px;
 }
 
 p.circle-image-context {
   margin-top: 20px;
-  font-family: DM Sans;
+  font-family: serif;
   font-size: 20px;
 }
 
