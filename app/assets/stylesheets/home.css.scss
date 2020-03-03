@@ -17,8 +17,17 @@
   height: 300px;
 }
 
-@media screen and (max-width: 800px) {
-  .circle-image{display: none}
+@media (min-width: 426px) and (max-width: 767px) {
+  .circle-image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .circle-image {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 p.circle-image-title {
@@ -40,17 +49,6 @@ p.circle-image-context {
   font-size: 20px;
 }
 
-// グレーのボックス
-// ul, ol {
-//   background: #f1e9e9;/*灰色に*/
-//   border-radius :8px;
-//   box-shadow :0px 0px 5px rgb(255, 255, 255);
-//   padding: 0.5em 0.5em 0.5em 2em;
-// }
-// ul li, ol li {
-//   line-height: 1.5;
-//   padding: 0.5em 0;
-// }
 
 .circle-image-context ul {
   padding: 0;

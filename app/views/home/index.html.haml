@@ -2,36 +2,23 @@
   .bg-mask
     .container
       = render 'shared/message'
-    // Boxanimationのsection
-    / = render 'boxarea'
-
-    / HOME ICON SECTION
-    / = render 'homeicon'
-    
-    / darkoverlay SECTION
-    / = render 'darkoverlay'
 
     / ABOUT SECTION
     %section#about.py-3
       .container
         .row
-          .col-md-8
+          .col-md-9
             %h3 TuningMVアプリとは？
-          
             %p.circle-image-first-context
               そのときの「気分」に合ったMV(ミュージックビデオ)をYoutubeから取得し、
-              %br
               再生できるアプリです。
               %br 元気を出したいときにはテンションが上がるMV、落ち着きたい時はゆったりとしたMV・・など、あなたの生活に彩りを！
-          .col-md-4
+          .col-md-3
             = image_tag '/images/jacket.jpg', alt: 'アルバムジャケット風',  class: 'circle-image'
-        
         .row
-          .col-md-4
-            = image_tag '/images/park.jpg', alt: '公園', class: 'circle-image'
-          .col-md-8
+          .col-md-8    
             %p.circle-image-title
-              アプリの使い方(MVの再生)
+              使い方: MVの再生
             .circle-image-context
               %p
                 %ul
@@ -39,22 +26,26 @@
                   %li「気分セレクトボックス」の中から、そのときの気分を選択 !
                   %li するとYoutubeのプレイリストから、選択した「気分セレクトボックス」にマッチングしたMVが取得され、ページに表示される
                   %li MVを楽しもう!! Make fun!!
-              
+            
                 = link_to youtube_index_path do 
                   %button.btn.action-1.lg MVページ
-            
+          .col-md-4
+            %br
+            %br
+            = image_tag '/images/park.jpg', alt: '公園', class: 'circle-image'
         .row
-          .col-md-8
+          .col-md-9
             %p.circle-image-title
               プレイリスト機能
             %p.circle-image-context
-              MVページで取得した動画一覧を「自分のプレイリスト」として保存して、
+              MVページで取得した動画を、「自分のPlaylist」に保存できます。
               %br
-              「 Playlistページ」で閲覧できます。
+              作成したPlaylistは以下のページで閲覧できます。
             %br  
               = link_to youtube_user_playlist_path do 
                 %button.btn.action-1.lg Playlistページ
-          .col-md-4
+          .col-md-3
+            %br
             = image_tag '/images/skywindow.jpg', alt: '空', class: 'circle-image'
+        
 
-      
