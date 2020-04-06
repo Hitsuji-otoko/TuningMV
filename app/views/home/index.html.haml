@@ -7,13 +7,13 @@
     %section#about.py-3
       .container
         .row
-          .col-md-9
+          .col-md-7
             %h3 TuningMVアプリとは？
             %p.circle-image-first-context
               そのときの「気分」に合ったMV(ミュージックビデオ)をYoutubeから取得し、
               再生できるアプリです。
               %br 元気を出したいときにはテンションが上がるMV、落ち着きたい時はゆったりとしたMV・・など、あなたの生活に彩りを！
-          .col-md-3
+          .col-md-5
             = image_tag '/images/jacket.jpg', alt: 'アルバムジャケット風',  class: 'circle-image'
         .row
           .col-md-8    
@@ -34,9 +34,9 @@
             %br
             = image_tag '/images/park.jpg', alt: '公園', class: 'circle-image'
         .row
-          .col-md-9
+          .col-md-7
             %p.circle-image-title
-              プレイリスト機能
+              Playlist機能 
             %p.circle-image-context
               MVページで取得した動画を、「自分のPlaylist」に保存できます。
               %br
@@ -44,7 +44,7 @@
             %br  
               = link_to youtube_user_playlist_path do 
                 %button.btn.action-1.lg Playlistページ
-          .col-md-3
+          .col-md-5
             %br
             = image_tag '/images/skywindow.jpg', alt: '空', class: 'circle-image'
         

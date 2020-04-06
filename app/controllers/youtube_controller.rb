@@ -55,7 +55,7 @@ class YoutubeController < ApplicationController
     next_page_token = nil
     opt = {
       playlist_id: playlist_id,
-      max_results: 50,
+      max_results: 100,
       page_token: next_page_token,
     }
     begin
