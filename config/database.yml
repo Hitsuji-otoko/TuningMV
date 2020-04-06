@@ -17,7 +17,6 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
   username: tuningmv
   password:
   # For details on connection pooling, see Rails configuration guide
@@ -83,5 +82,3 @@ production:
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   host: <%= ENV['DB_HOSTNAME'] %>
-  
-
