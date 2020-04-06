@@ -17,6 +17,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: localhost
   username: tuningmv
   password:
   # For details on connection pooling, see Rails configuration guide
@@ -75,10 +76,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# 本番環境はAWSで構築するから、後回し
+# herokuでpostgresを使うように設定
 production:
   <<: *default
-  database: <%= ENV['DB_NAME'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOSTNAME'] %>
+  adapter: postgresql
+  database: db/production.postgresql
+  url: <%= ENV['DATABASE_URL'] %>
